@@ -8,14 +8,14 @@ the extra mile and do it once and for all.
 
 There is a more general purpose, and it it to build little models of what a public service
 of collecting official data and running simple calculations on them might look like. A sort
-of "data Wikippedia". 
+of "data Wikipedia". 
 
 
 ## Use
 
 The ">" signals the interpreter is ready to eval a statement (BUG: 1st time it doesn't 
 appear). Every statement is written in the notation `function(op1, op2...)`. For assignment
-the `=` or `setq` can be used. Examples can be found in the code comments. 
+the `=` or `setq` can be used. Examples can be found in the interpreter comments. 
 
 There is no notion of type and there are only global variables, with the exception of local 
 scopes used to define functions and loops.
