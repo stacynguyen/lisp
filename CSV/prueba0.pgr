@@ -1,0 +1,5 @@
+
+// Proof of concept: load 2 lines of code and execute them
+=(x, ar(1,2,3,4,5))	// array
+function( times7(x), *(x,7))
+map(times7, x)

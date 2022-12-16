@@ -1,0 +1,23 @@
+
+// Proof of concept: load a table of homicides an compute
+// avg of first 6 months. The only thing code doesnt do is
+// load the table. That must be done by hand on the html
+// So, 1st load the table by clicking on button and then 
+// load the code. Code will execute upon loading.
+
+// Step by step
+progn(
+	echo(false),
+	=(x1,row("CNSP-Victimas-2020_dic2020","1.1.1")),// select row
+	=(x2,cut(x1,2,8)),			// subset of cols
+	=(x3,fold(+,x2)),			// add them
+	=(x4,/(x3,6)),				// avg
+	echo(true),
+	print2("Promedio dolosos ene-jun 2020 =",x4),
+
+	// One go
+	print2("one go"),
+	/(fold(+,cut(row("CNSP-Victimas-2020_dic2020","1.1.1"),2,8)),6)
+)
+
+

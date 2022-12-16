@@ -1,0 +1,51 @@
+
+// Carga tabla y obtiene promedios
+// Ej 	
+//	loadTable(amlo)
+//	promedio(dolosos(amlo),0,2)
+//	suma(feminicidios(amlo),7,9)
+//	etc
+
+// Homicidios dolosos por mes sobre tabla de un año SESNSP
+function(dolosos(tabla),progn(
+	pivot(tabla,0,1),	// salta col 0
+	cut(row(tabla,"1.1.1"),2,14)
+))
+
+// Feminicidios por mes sobre tabla de un año SESNSP
+function(feminicidios(tabla),progn(
+	pivot(tabla,0,2),	// salta col 0
+	cut(row(tabla,"Feminicidio"),1,13)
+))
+
+// Promedio mensual entre meses [a,b]
+function(promedio(v,a,b),progn(
+	setq(acc,0),
+	loop(i,a,+(b,1),setq(acc,+(acc,at(v,i)))
+	),
+	/(acc,+(1,-(b,a)))
+))
+
+// Suma mensual. Hay folds...
+function(suma(v,a,b),progn(
+	setq(acc,0),
+	loop(i,a,+(b,1),setq(acc,+(acc,at(v,i)))
+	),
+	acc
+))
+
+// Constantes
+setq(ene,0)
+setq(feb,1)
+setq(mar,2)
+setq(abr,3)
+setq(may,4)
+setq(jun,5)
+setq(jul,6)
+setq(ago,7)
+setq(sep,8)
+setq(oct,9)
+setq(nov,10)
+setq(dic,11)
+
+ 

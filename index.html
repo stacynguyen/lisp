@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+
+    <style>
+	p.normal{font-family: 'Noto Serif', serif;}
+	h3{font-family: 'Noto Serif', serif;}
+	form.q{font-family: 'Noto Serif', serif;}
+	button {background: #abdbe3; border-radius: 20px; line-height: 3.0; width: 150px;
+        overflow: hidden; }
+	div.cr{text-align: center;}
+	body {background: #f2f0e1;}
+
+	<link rel="stylesheet" href="c:/java/Console.css">
+    </style>
+	
+   <meta charset="utf-8">
+
+    <title>LISP Interpreter</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+
+		<script src="js/LISP2.js"></script>		
+		<script src="js/Console2.js"></script>		
+		<script src="js/papaparse.min.js" ></script>
+
+  </head>
+  <body>
+  
+<h3>Prueba: LISP</h3>
+
+<form id="console">
+		<textarea id="text-box" cols="50" rows="15"></textarea>
+</form>
+
+
+<div>
+       <input type="hidden" id="uploadTextValue" name="uploadTextValue" value="" />
+       <input id="uploadText" type="file"  onchange="load();"cstyle="color:transparent;" onchange="this.style.color = 'black';" />
+</div>
+
+
+<script>
+$(document).ready(function(){ fire(); })
+</script>
+
+</body>
+</html>

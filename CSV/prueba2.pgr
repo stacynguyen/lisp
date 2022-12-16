@@ -1,0 +1,39 @@
+
+// Proof of concept: monthly avg of daily values
+// Sequence:
+//	1- Load table
+//	2- Load code
+//	3- Execute code with run($table)
+//	4- print_value() or full(true),$print
+
+function(run(table), 			// after loading table "Tipo de cambio diario Banxico"
+	progn(
+		setq(lgt,lengtht(table)),
+		setq(n,0),
+		setq(acc,0),
+		setq(mesant,0),
+		setq(anoant,0),
+		setq(p,0),
+		loop(i,18,lgt,progn(
+			setq(y,row(table,i)),
+			setq(fecha,at(y,0)),
+			setq(mes,number(substr(fecha,3,5))),
+			setq(ano,number(substr(fecha,6,10))),
+			setq(imp,number(at(y,1))),
+			if(eq(i,18),progn(setq(mesant,mes),setq(anoant,ano))),
+			if (neq(mes,mesant),
+				progn(
+					setq(p,/(acc,n)),
+					print(anoant,"/",mesant,": ",p), // print to buffer
+					setq(mesant,mes),
+					setq(anoant,ano),
+					setq(acc,0),
+					setq(n,0)
+				)
+			),
+			setq(acc,+(acc,imp)),
+			setq(n,+(n,1))
+		)),
+		print_value()	// delayed buffer print, one go	
+	)
+)

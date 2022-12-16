@@ -1,0 +1,17 @@
+
+// Proof of concept: monthly avg of daily values
+// load table Tipo de Cambio first
+// print2 will output values as it goes along
+// it slows down execution considerably. 
+// prueba2 shows a much better way of doing it
+
+function(run(table), 	// after loading table
+	progn(
+		=(lgt,lengtht(table)),	// 2538
+		loop(i,18,lgt,progn(
+		  =(y,row("Tipo de cambio diario Banxico",i)),
+		  =(fecha,at(y,0)),
+		  print2(fecha)
+		))
+	)
+)
